@@ -56,13 +56,15 @@ function generatePassword() {
 // Creates a base variable to add our new generated password to.
   var newPass = '';
 
-// For loop that will mix the password up based on the numerical length in the User's criteria. This will then set the "newPass" variable to the result of the mixed up word.
+// This for loop will repeat based off the passLength input
+// Then creates a new variable randomPass that will grab a character from a random position in the characters string.
+// newPass is then created so the random character selected from the randomPass is added to the end of the newPass string.
   for (var i = 0; i < passLength; i++) {
     var randomPass = Math.floor(Math.random() * characters.length);
     newPass += characters.charAt(randomPass);
   }
 
-// Return the result of the For loop (the generated password)
+// Return the result of the For loop (the generated password).
   return newPass;
 
 // This else is connected the generatePassword function, if the validateLength is returned as false then it will prompt the User that the Password Length input is not valid and will return nothing. 
